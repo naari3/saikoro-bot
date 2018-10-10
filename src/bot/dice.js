@@ -10,9 +10,7 @@ export default async robot => {
       const diceNum = BigInt(res.match[1]);
       const diceSurfaceNum = BigInt(res.match[3]);
       if ([diceNum, diceSurfaceNum].every(i => BigInt(i).greater(0))) {
-        (async () => {
-          res.send(`${dice(diceNum, diceSurfaceNum).toString()}`);
-        })();
+        res.send(`${dice(diceNum, diceSurfaceNum).toString()}`);
       }
     }
   );
@@ -20,7 +18,7 @@ export default async robot => {
 
 const dice = (a, b) => {
   let sum = BigInt(0);
-  for (let i = 0; i < a; i++) {
+  for (let i = 0; i < a; i = i + 1) {
     sum = sum.add(BigInt.randBetween(1, b));
   }
   return sum;
