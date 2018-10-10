@@ -19,9 +19,9 @@ export default async robot => {
 };
 
 const dice = (a, b) => {
-  let sum = 0;
+  let sum = BigInt(0);
   for (let i = 0; i < a; i++) {
-    sum += BigInt.randBetween(1, b);
+    sum = sum.add(BigInt.randBetween(1, b));
   }
   return sum;
 };
