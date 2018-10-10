@@ -4,7 +4,7 @@
 const BigInt = require("big-integer");
 
 export default async robot => {
-  robot.hear(new RegExp("(\\d+)d(\\d+)"), res => {
+  robot.hear(new RegExp("([1-9][\\d]*)d([1-9][\\d]*)"), res => {
     res.send(
       `${dice(parseInt(res.match[1]), parseInt(res.match[2])).toString()}`
     );
