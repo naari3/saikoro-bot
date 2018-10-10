@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "big-integer": "^1.6.36",
     "hubot": "^3.1.1",
     "hubot-google-images": "^0.2.7",
     "hubot-help": "^1.0.1",
